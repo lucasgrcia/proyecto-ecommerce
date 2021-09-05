@@ -23,35 +23,53 @@
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" />
     <!--Script-->
-    <script src="/js/login.js"></script>
   </head>
 
-  <body class="m-0 vh-100 row justify-content-center align-items-center">
-    <form action="home.html" onsubmit="validacion()">
-      <div class="form-group">
-        <label for="inputUser">Usuario</label>
-        <input
-          type="email"
-          class="form-control"
-          id="inputUser"
-          placeholder="Email"
-        />
-      </div>
-      <div class="form-group">
-        <label for="inputPassword">Contraseña</label>
-        <input
-          type="password"
-          class="form-control"
-          id="inputPassword"
-          placeholder="Contraseña"
-        />
-      </div>
-      <div class="form-group">
-        <label class="form-check-label"
-          ><input type="checkbox" /> Recordar Contraseña</label
-        >
-      </div>
-      <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-    </form>
+  <body class="text-center">
+    <div class="container p-5">
+      <h2>Ingreso</h2>
+      <div id="alert"></div>
+      <form class="needs-validation" novalidate>
+        <label for="validationCustomUsername">Email</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend">📧</span>
+          </div>
+          <input
+            type="email"
+            class="form-control"
+            id="inputUser"
+            placeholder="Ingrese su email"
+            aria-describedby="inputGroupPrepend"
+            required
+          />
+          <div class="invalid-feedback">Por favor ingrese su email.</div>
+        </div>
+        <hr />
+        <label for="validationCustomUsername">Password</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend">🔒</span>
+          </div>
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword"
+            placeholder="Ingrese su contraseña"
+            aria-describedby="inputGroupPrepend"
+            required
+          />
+          <div class="invalid-feedback">Por favor ingrese su contraseña.</div>
+        </div>
+        <br />
+        <button class="btn btn-primary" type="submit" id="buttonIngresoLogin">
+          Entrar
+        </button>
+      </form>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
