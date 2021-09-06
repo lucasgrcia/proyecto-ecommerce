@@ -5,7 +5,7 @@ function isLogged(from, msg) {
             from: from,
             msg: msg
         }));
-        window.location = 'home.html';
+        window.location = 'login.html';
     }
 }
 

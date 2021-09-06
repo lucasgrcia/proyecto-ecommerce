@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         `;
     }
 
-    (function () { //Validacion del usuario y contraseña, redirecciona a home.html 
+    (function () {
         'use strict';
         window.addEventListener('load', function () {
             var forms = document.getElementsByClassName('needs-validation');
@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
                         event.preventDefault();
                         event.stopPropagation();
                         
-                        let inputUser = document.getElementById("inputUser");
-                        let inputPassword = document.getElementById("inputPassword"); // sin funcion alguna
+                        let inputEmail = document.getElementById("inputEmailLogin");
+                        let inputPassword = document.getElementById("inputPasswordLogin"); // sin funcion
                         localStorage.setItem('user-logged', JSON.stringify({
-                            email: inputUser.value
+                            email: inputEmail.value
                         }));
                         if (loginNeed) {
                             localStorage.removeItem('login-need');
@@ -45,6 +45,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 }, false);
             });
         }, false);
-    });
+    })();
 
 });
