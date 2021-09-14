@@ -62,6 +62,24 @@ document.addEventListener("DOMContentLoaded", function(e) { //Funcion que se eje
         showList(listOfProducts);
     });
     
+    // EVENTO PARA BUSCAR UNA PALABRA RELACIONADA CON EL NOMBRE O LA DESCRIPCION
+    document.getElementById("search").addEventListener("input", function() {
+
+        searchedWord = document.getElementById("input-search-word").value.toLowerCase();
+
+        showProducts(currentProductsArray);
+    });
+
+    // EVENTO PARA LIMPIAR LA PALABRA BUSCADA
+    document.getElementById("clearSearch").addEventListener("click", function () {
+        
+        document.getElementById("input-search-word").value = "";
+
+        searchedWord = undefined;
+
+        showProducts(currentProductsArray);
+    })
+    
 });
 //____________________________________________________________________________________________________________________________
 // Funcion creada en entrega 2, codigo de entrega1
