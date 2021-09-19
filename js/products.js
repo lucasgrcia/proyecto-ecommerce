@@ -61,6 +61,24 @@ document.addEventListener("DOMContentLoaded", function(e) { //Funcion que se eje
         sortList(current, listOfProducts);
         showList(listOfProducts);
     });
+     //Buscador
+     $('#buscar').keyup(function() {
+        let inputSearch = $('#buscar').val().toLowerCase();
+        console.log(inputSearch);
+        if (inputSearch !== '') {
+            r = new RegExp(inputSearch.replaceAll(/\s/g, '\\s'));
+        } else {
+            r = undefined;
+        }
+        console.log(r);
+        showList(listaProductos);
+    });
+    //boton para limpiar busqueda
+    $('#clearSearch').click(function() {
+        $('#buscar').val('');
+        r = undefined;
+        showList(listaProductos);
+    });
     
     // EVENTO PARA BUSCAR UNA PALABRA RELACIONADA CON EL NOMBRE O LA DESCRIPCION
     document.getElementById("search").addEventListener("input", function() {

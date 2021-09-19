@@ -88,54 +88,34 @@
     </nav>
     <!------------------------------------fin Nav------------------------------------------------------------->
     
-<main role="main">
+
             <!--Entrega 3-->
-             <dt><h4 id="prueba">Comentarios y claificaciones</h4></dt>
-                    <dd><p id="comentariosCalificaciones"></p></dd>
-            </dl>
-            <div id="calificacion">
-                <h3 style="margin-bottom: 1.6rem; margin-top: 7rem">
-                    ¿Compraste el produto? ¡Cuéntanos que te pareció!
-                </h3>
-                <textarea
-                    class="form-control"
-                    id="ta-comentario"
-                    cols="100"
-                    rows="4"
-                    placeholder="Escribe aquí!"
-                ></textarea>
-                <div>
-                    <h3 id="h3-califica-estrellas">
-                        Califica con estrellas!
-                    </h3>
-                    <div class="star-rating" id="div-estrellas">
-                        <input id="star-5" type="radio" name="rating" value="5" checked />
-                        <label for="star-5" title="5 stars">
-                            <i class="active fa fa-star"></i>
-                        </label>
-                        <input
-                            id="star-4" type="radio" name="rating" value="4" />
-                        <label for="star-4" title="4 stars">
-                            <i class="active fa fa-star"></i>
-                        </label>
-                        <input id="star-3" type="radio" name="rating" value="3" />
-                        <label for="star-3" title="3 stars">
-                            <i class="active fa fa-star"></i>
-                        </label>
-                        <input id="star-2" type="radio" name="rating" value="2" />
-                        <label for="star-2" title="2 stars">
-                            <i class="active fa fa-star"></i>
-                        </label>
-                        <input id="star-1" type="radio" name="rating" value="1" />
-                        <label for="star-1" title="1 star">
-                            <i class="active fa fa-star"></i>
-                        </label>
-                    </div>
-                </div>
-                <button class="btn btn-outline-primary" id="btn-enviar-calificacion">Enviar</button>
+            <div class="container p-5" id="infoProd">
+    </div>
+            <!--Comentarios y Estrellas-->            
+             <div class="container" id="cajaComentarios">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p id="warning"></p>
+                <textarea class="comentarios" id="userComment" placeholder="Escribe un comentario..."></textarea>
             </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-center">
+                <span class="fa fa-star rating checked selected" id="s1"></span>
+                <span class="fa fa-star rating" id="s2"></span>
+                <span class="fa fa-star rating" id="s3"></span>
+                <span class="fa fa-star rating" id="s4"></span>
+                <span class="fa fa-star rating" id="s5"></span>
+            </div>
+            <div class="col-sm-4 text-center">
+                <input type="submit" id="btnComentar" value="Comentar">
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    </div>
             <!--Fin entrega 3-->
-  </main>
+
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
