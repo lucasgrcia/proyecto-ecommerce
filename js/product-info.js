@@ -113,19 +113,23 @@ function show(info, prodComments, prods) {
         `
     }
     let html = `
-        <div class="container">
-            <div class="col-xs-5 col-lg-6">
-                <div class="row">
-                    <div class="col text-left">
-                        <img src="${info.images[0]}" class="principal"> <!--Foto principal del Onix-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col text-left">     
-                        ${img}           <!--Fotos del Onix-->
-                    </div>
-                </div>
-            </div>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="${info.images[0]}" class="d-block w-100" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="${img}">
+        </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
             <div class="col-xs-7 col-lg-6">
                 <div class="row">
                     <div class="col p-1">
@@ -150,7 +154,7 @@ function show(info, prodComments, prods) {
                 <div class="row">
                     <div class="col-sm-12">
                         <p class="soldCount">Vendidos: ${info.soldCount}</p>
-                        <button class="category">${info.category}</b>
+                        <button href="products.html" class="category">${info.category}</b>
                     </div>
                 </div>
             </div>
