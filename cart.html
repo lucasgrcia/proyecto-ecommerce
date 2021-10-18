@@ -105,23 +105,124 @@
     </nav>
     <!------------------------------------fin Nav------------------------------------------------------------->
     <div class="container p-5">
-      <div
-        class="alert alert-danger"
-        role="alert"
-        style="position: relative; width: auto; top: 0"
-      >
-        <h4 class="alert-heading">¡A trabajar! :)</h4>
-        <p>
-          Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y
-          Entrega 7 (Fecha de entrega: 14/11/2021).
-        </p>
-        <hr />
-        <p class="mb-0">
-          Para saber qué debes hacer, fijate en la actividad en CREA
-          correspondiente a esta entrega.
-        </p>
+      <div class="row">
+        <div class="col-md-12">
+          <!--Detealle de los productos-->
+          <h3>Detalle</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Imagen</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody id="products"></tbody>
+          </table>
+        </div>
+      </div>
+      <hr />
+
+      <!-------------------------------Inputs de Envios---------------------------------->
+      <div class="row" id="envios">
+        <div class="col-md-6">
+          <h3>Tipo de envío</h3>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="envio"
+              id="standar"
+              onclick="resumenUpdate()"
+              checked
+            />
+            <label class="form-check-label" for="standar">
+              Standar + 5% (12 a 15 días)</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="envio"
+              id="express"
+              onclick="resumenUpdate()"
+            />
+            <label class="form-check-label" for="express">
+              Express + 7% (5 a 8 días)</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="envio"
+              id="premium"
+              onclick="resumenUpdate()"
+            />
+            <label class="form-check-label" for="premium">
+              Premium + 15% (2 a 5 días)</label
+            >
+          </div>
+          <!-----------------------------Formulario para envios------------------------------------>
+          <form class="mt-4">
+            <h3>Datos de envío:</h3>
+            <input
+              type="text"
+              class="form-control mt-2"
+              placeholder="Calle"
+              required
+            />
+            <input
+              type="text"
+              class="form-control mt-2"
+              placeholder="Numero de puerta"
+              required
+            />
+            <input
+              type="text"
+              class="form-control mt-2"
+              placeholder="Esquina"
+              required
+            />
+            <input
+              type="text"
+              class="form-control mt-2"
+              placeholder="Apartamento"
+            />
+            <input
+              type="text"
+              class="form-control mt-2"
+              placeholder="Código postal"
+            />
+            <input
+              type="text"
+              class="form-control mt-2"
+              placeholder="Localidad"
+            />
+          </form>
+        </div>
+        <!------------------------Resumen...Subtotal..Envio...Total---------------->
+        <div class="col-md-6">
+          <h3>Resumen</h3>
+          <p>Subtotal: UYU <span id="sub"></span></p>
+          <p>Envío: UYU <span id="env"></span></p>
+          <hr />
+          <p>Total: UYU <span id="total"></span></p>
+          <small
+            ><i
+              >*Los precios del resumen de la factura son expresados en UYU, con
+              la cotizacion del dolar propia de la tienda: UYU
+              <span id="cotizacion"></span></i
+          ></small>
+          <button class="btn btn-primary btn-block m-1">Comprar ahora</button>
+        </div>
       </div>
     </div>
+    <!--_______________________________________________________________________________________________-->
+
     <div id="spinner-wrapper">
       <div class="lds-ring">
         <div></div>
