@@ -72,9 +72,7 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.html">Mi carrito</a>
-          </li>
+          
         </ul>
       </div>
 
@@ -105,43 +103,95 @@
       </div>
     </nav>
     <!------------------------------------fin Nav------------------------------------------------------------->
+    <!----------------------------------------------ENTREGA 6------------------->
     <div class="container p-5">
-      <div
-        class="alert alert-danger"
-        role="alert"
-        style="position: relative; width: auto; top: 0"
-      >
-        <h4 class="alert-heading">¡A trabajar! :)</h4>
-        <p>
-          Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).
-        </p>
-        <hr />
-        <p class="mb-0">
-          Para saber qué debes hacer, fijate en la actividad en CREA
-          correspondiente a esta entrega.
-        </p>
-      </div>
+      <h2>Datos Personales</h2>
+      <br />
+      <form id="user-data" class="needs-validation" novalidate>
+        <div class="form">
+          <div class="col-md-4 mb-3 d-flex flex-column align-items-center text-center ">
+            <img 
+              width="150px"
+              height="150px"
+              id="image"
+              src="https://www.marinasmediterraneo.com/marinaseste/wp-content/uploads/sites/4/2018/09/generic-user-purple-4.png"
+              alt="user-image"
+            />
+            <input
+              type="text"
+              class="form-control"
+              id="url-image"
+              placeholder="Ingrese su imagen"
+              required
+            />
+            <div class="invalid-feedback">Por favor ingrese su imagen.</div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom01">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Ingrese su nombre"
+              required
+            />
+            <div class="invalid-feedback">Por favor ingrese su nombre.</div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastname"
+              placeholder="Ingrese su apellido"
+              required
+            />
+            <div class="invalid-feedback">Por favor ingrese su apellido.</div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationCustomUsername">Usuario</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend"> @ </span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                placeholder="Ingrese su usuario"
+                aria-describedby="inputGroupPrepend"
+                required
+              />
+              <div class="invalid-feedback">Por favor ingrese su usuario.</div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Edad</label>
+            <input
+              type="number"
+              class="form-control"
+              id="age"
+              placeholder="Ingrese su edad"
+            /></div>
+
+            <div class="invalid-feedback">Por favor ingrese su edad.</div>
+            <div class="col-md-4 mb-3">
+              <label for="cellphone">Telefono</label>
+              <input
+                type="tel"
+                class="form-control"
+                id="cellphone"
+                placeholder="Ingrese su telefono"
+                required
+              />
+              <div class="invalid-feedback">Por favor ingrese su telefono.</div>
+            </div>
+          </div>
+          <button class="col-md-4 btn btn-primary" type="submit">Guardar cambios</button>
+        </div>
+      </form>
     </div>
-    <footer class="text-muted bg-light">
-      <div class="container">
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>
-          Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la
-          letra del obligatorio.
-        </p>
-      </div>
-    </footer>
-    <div class="alert fade alert-success" role="alert" id="alertResult">
-      <span id="resultSpan"></span>
-      <button
-        type="button"
-        class="close"
-        data-dismiss="alert"
-        aria-label="Close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
+    <!-- FIN entrega 6-->
     <div id="spinner-wrapper">
       <div class="lds-ring">
         <div></div>
@@ -157,3 +207,4 @@
     <script src="js/my-profile.js"></script>
   </body>
 </html>
+
