@@ -71,9 +71,6 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.html">Mi carrito</a>
-          </li>
         </ul>
       </div>
 
@@ -117,6 +114,7 @@
                 <th scope="col">Precio</th>
                 <th scope="col">Cantidad</th>
                 <th scope="col">Subtotal</th>
+                
               </tr>
             </thead>
             <tbody id="products"></tbody>
@@ -191,16 +189,19 @@
               type="text"
               class="form-control mt-2"
               placeholder="Apartamento"
+              required
             />
             <input
               type="text"
               class="form-control mt-2"
               placeholder="Código postal"
+              required
             />
             <input
               type="text"
               class="form-control mt-2"
               placeholder="Localidad"
+              required
             />
           </form>
         </div>
@@ -217,12 +218,97 @@
               la cotizacion del dolar propia de la tienda: UYU
               <span id="cotizacion"></span></i
           ></small>
-          <button class="btn btn-primary btn-block m-1">Comprar ahora</button>
+          <button type="button" class="btn btn-primary btn-block m-1" data-toggle="modal" data-target="#exampleModal">Comprar</button>
         </div>
       </div>
     </div>
     <!--_______________________________________________________________________________________________-->
-
+    <!--___________________________________Modal_______________________________________________-->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pago</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Total: UYU <span id="totalModal"></span></p>
+                        </div>
+                        <div class="card col-md-12">
+                            <div class="card-header">
+                                <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                                    <!-- Credit card form tabs -->
+                                    <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                                        <li class="nav-item">
+                                            <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Tarjeta de credito </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a data-toggle="pill" href="#net-banking" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Transferencia bancaria </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Credit card form content -->
+                            <div class="tab-content">
+                                <!-- credit card info-->
+                                <div id="credit-card" class="tab-pane fade show active pt-3">
+                                    <form role="form" id="credito" onsubmit="return pagar('credito')">
+                                        <div class="form-group"> <label for="username">
+                                        <h6>Titular</h6>
+                                    </label> <input type="text" name="username" data-campo="Nombre titular" placeholder="Nombre del titular" required class="form-control creditoreq"> </div>
+                                        <div class="form-group"> <label for="cardNumber">
+                                        <h6>Número de tarjeta</h6>
+                                    </label>
+                                            <div class="input-group"> <input type="text" data-campo="Número de tarjeta" name="cardNumber" placeholder="Número en el dorso de su tarjeta" class="form-control creditoreq" required>
+                                                <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <div class="form-group"> <label><span class="hidden-xs">
+                                                    <h6>Vencimiento</h6>
+                                                </span></label>
+                                                    <div class="input-group"> <input data-campo="Mes" type="number" placeholder="MM" name="" min="1" max="12" class="form-control creditoreq" required> <input type="number" data-campo="Año" placeholder="AA" min="21" max="99" name=""
+                                                            class="form-control creditoreq" required> </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group mb-4"> <label data-toggle="tooltip" title="Tres digitos en el reverso de su tarjeta.">
+                                                <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                            </label> <input type="text" data-campo="Cuenta bancaria" minlength="3" maxlength="3" required class="form-control creditoreq"> </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer"> <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm"> Confirmar pago </button>
+                                    </form>
+                                    </div>
+                                </div>
+                                <!-- End -->
+                                <div id="net-banking" class="tab-pane fade pt-3">
+                                    <form id="banco" onsubmit="return pagar('banco')">
+                                        <div class="form-group"> <label for="banco">
+                                        <h6>Cuenta bancaria</h6>
+                                    </label> <input type="text" name="banco" placeholder="Cuenta bancaria" required class="form-control bancoreq"> </div>
+                                        <div class="form-group">
+                                            <p> <button type="submit" class="btn btn-primary"><i class="fas fa-mobile-alt mr-2"></i> Confirmar pago</button> </p>
+                                        </div>
+                                    </form>
+                                </div>
+                                <p id="warning" hidden="true">error</p>
+                                <!-- End -->
+                                <!-- End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--_______________________________________________________________________________________________-->
     <div id="spinner-wrapper">
       <div class="lds-ring">
         <div></div>
